@@ -8,6 +8,27 @@ class Timer extends Component {
 
   // add your code here
 
+componentDidMount() {
+  this.interval = setInterval(this.clockTick, 1000);
+}
+
+
+componentWillUnmount() {
+  clearInterval(this.interval);
+}
+
+render() {
+  const { time, color } = this.state;
+  return (
+    <section className="Timer" style={{ background: color }}>
+      <h1>{time}</h1>
+      <button onClick={this.stopClock}>Stop</button>
+      <aside className="mountText">Mounted</aside>
+      <small onClick={this.handleClose}>X</small>
+    </section>
+  );
+}
+
   render() {
     const { time, color } = this.state;
     return (

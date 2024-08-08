@@ -14,6 +14,11 @@ class App extends Component {
 
 
 
+componentDidMount() {
+  
+  this.handleAddTimer();
+}
+
 
 
 
@@ -24,7 +29,7 @@ class App extends Component {
   // Unless, of course, you're curious about how it all works
   render() {
 
-    return (
+   return (
       <div className="App">
         <h1>MultiTimer</h1>
         <button onClick={this.handleAddTimer}>Add New Timer</button>
